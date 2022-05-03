@@ -1,10 +1,8 @@
 <script>
-	import Router from "svelte-spa-router"
-	import Index from "./pages/index.svelte";
-
-	const routes = {
-		"/": Index
-	}
+  import Router from "svelte-spa-router";
+  import routes from "./routes";
 </script>
 
-<Router {routes} />
+<main>
+  <Router {routes} />
+</main>
