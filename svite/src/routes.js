@@ -1,5 +1,4 @@
 import Contact from "./pages/contact.svelte";
-import Index from "./pages/index.svelte";
 import NotFound from "./pages/NotFound.svelte"
 import Dashboard from "./pages/Dashboard.svelte"
 
@@ -7,9 +6,9 @@ import Dashboard from "./pages/Dashboard.svelte"
 // import Dashboard from "./components/Dashboard.svelte"
 
 export default {
-    '/': Index,
+    '/': Dashboard,
     "/Contact": Contact,
-    "/Dashboard" : Dashboard,
+    // "/Dashboard" : Dashboard,
 
 
 
