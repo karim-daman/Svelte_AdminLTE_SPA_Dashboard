@@ -1,5 +1,3 @@
-<a href="#/"> page 1 </a>
-
 <header class="section-header">
   <section class="header-main">
     <div class="container">

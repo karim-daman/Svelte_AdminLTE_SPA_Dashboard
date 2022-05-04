@@ -1,8 +1,9 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-sm" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
     <!-- <div class="modal-content"> -->
-    <div class="card">
+
+    <div class="modal-content">
       <div class="card-body">
         <h4 class="mb-4">Sign in</h4>
         <form>
@@ -13,7 +14,7 @@
           </div>
 
           <div class="d-flex mb-3">
-            <label class="form-check me-auto"> <input class="form-check-input" type="checkbox" value="" checked="" /> <span class="form-check-label"> Remember </span> </label>
+            <label class="form-check me-auto"> <input class="form-check-input" type="checkbox" value="" /> <span class="form-check-label"> Remember </span> </label>
             <a href="#" class="text-decoration-none">Forgot password</a>
           </div>
           <button class="btn btn-primary w-100" type="button"> Sign in </button>
@@ -32,6 +33,7 @@
         </form>
       </div>
     </div>
+
     <!-- </div> -->
   </div>
 </div>
@@ -43,14 +45,14 @@
       <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars" /></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="#/" class="nav-link">Home</a>
+      <a href="#/" class="nav-link">Dashboard</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-      <a href="#/Contact" class="nav-link">Contact</a>
+      <a href="#/Site" class="nav-link">Site</a>
     </li>
 
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter"> Sign-in icon </button>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm"> Sign-in icon </button>
   </ul>
 
   <!-- Right navbar links -->

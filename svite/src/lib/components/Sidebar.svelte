@@ -1,3 +1,45 @@
+<script>
+  import { link } from "svelte-spa-router";
+
+  let DashboardToggle = true;
+  let ChartsToggle = true;
+  let UIToggle = true;
+  let FormToggle = true;
+  let TableToggle = true;
+  let MailBoxToggle = true;
+  let ExampleToggle = true;
+  let ExtraToggle = true;
+  let SearchToggle = true;
+
+  function handleDashboardToggle() {
+    DashboardToggle = !DashboardToggle;
+  }
+  function handleChartsToggle() {
+    ChartsToggle = !ChartsToggle;
+  }
+  function handleUIToggle() {
+    UIToggle = !UIToggle;
+  }
+  function handleFormToggle() {
+    FormToggle = !FormToggle;
+  }
+  function handleTableToggle() {
+    TableToggle = !TableToggle;
+  }
+  function handleMailBoxToggle() {
+    MailBoxToggle = !MailBoxToggle;
+  }
+  function handleExampleToggle() {
+    ExampleToggle = !ExampleToggle;
+  }
+  function handleExtraToggle() {
+    ExtraToggle = !ExtraToggle;
+  }
+  function handleSearchToggle() {
+    SearchToggle = !SearchToggle;
+  }
+</script>
+
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
@@ -34,8 +76,8 @@
       <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-        <li class="nav-item menu-open">
-          <a href="#" class="nav-link active">
+        <li class="nav-item">
+          <a href="#" class={!DashboardToggle ? "nav-link active" : "nav-link"} on:click={handleDashboardToggle}>
             <i class="nav-icon fas fa-tachometer-alt" />
             <p>
               Dashboard
@@ -44,19 +86,19 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="./index.html" class="nav-link active">
+              <a href="/" class="nav-link active">
                 <i class="far fa-circle nav-icon" />
                 <p>Dashboard v1</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index2.html" class="nav-link">
+              <a href="/" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Dashboard v2</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="./index3.html" class="nav-link">
+              <a href="/" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Dashboard v3</p>
               </a>
@@ -64,7 +106,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="pages/widgets.html" class="nav-link">
+          <a href="#/Widgets" class="nav-link">
             <i class="nav-icon fas fa-th" />
             <p>
               Widgets
@@ -72,7 +114,7 @@
             </p>
           </a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-copy" />
             <p>
@@ -83,31 +125,31 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/layout/top-nav.html" class="nav-link">
+              <a href="#/Top_nav" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Top Navigation</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+              <a href="#/Top_nav_sidebar" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Top Navigation + Sidebar</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/boxed.html" class="nav-link">
+              <a href="#/Boxed" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Boxed</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/fixed-sidebar.html" class="nav-link">
+              <a href="#/Fixed_sidebar" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Fixed Sidebar</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/fixed-sidebar-custom.html" class="nav-link">
+              <a href="#/Fixed_sidebar_custom" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>
                   Fixed Sidebar <small>+ Custom Area</small>
@@ -115,62 +157,65 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/fixed-topnav.html" class="nav-link">
+              <a href="#/Fixed_topnav" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Fixed Navbar</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/fixed-footer.html" class="nav-link">
+              <a href="#/Fixed_footer" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Fixed Footer</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/layout/collapsed-sidebar.html" class="nav-link">
+              <a href="#/Collapsed_sidebar" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Collapsed Sidebar</p>
               </a>
             </li>
           </ul>
-        </li>
+        </li> -->
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!ChartsToggle ? "nav-link active" : "nav-link"} on:click={handleChartsToggle}>
             <i class="nav-icon fas fa-chart-pie" />
             <p>
               Charts
               <i class="right fas fa-angle-left" />
             </p>
           </a>
+
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/charts/chartjs.html" class="nav-link">
+              <a href="#/Chart" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>ChartJS</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/flot.html" class="nav-link">
+              <a href="#/Flot" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Flot</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/inline.html" class="nav-link">
+              <a href="#/Inline" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Inline</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/charts/uplot.html" class="nav-link">
+              <a href="#/Uplot" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>uPlot</p>
               </a>
             </li>
           </ul>
         </li>
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!UIToggle ? "nav-link active" : "nav-link"} on:click={handleUIToggle}>
             <i class="nav-icon fas fa-tree" />
             <p>
               UI Elements
@@ -179,57 +224,58 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/UI/general.html" class="nav-link">
+              <a href="#/General" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>General</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/icons.html" class="nav-link">
+              <a href="#/Icons" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Icons</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/buttons.html" class="nav-link">
+              <a href="#/Buttons" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Buttons</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/sliders.html" class="nav-link">
+              <a href="#/Slider" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Sliders</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/modals.html" class="nav-link">
+              <a href="#/Modals" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Modals & Alerts</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/navbar.html" class="nav-link">
+              <a href="#/Navbar" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Navbar & Tabs</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/timeline.html" class="nav-link">
+              <a href="#/Timeline" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Timeline</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/UI/ribbons.html" class="nav-link">
+              <a href="#/Ribbons" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Ribbons</p>
               </a>
             </li>
           </ul>
         </li>
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!FormToggle ? "nav-link active" : "nav-link"} on:click={handleFormToggle}>
             <i class="nav-icon fas fa-edit" />
             <p>
               Forms
@@ -238,33 +284,34 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/forms/general.html" class="nav-link">
+              <a href="#/GeneralForm" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>General Elements</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/forms/advanced.html" class="nav-link">
+              <a href="#/Advanced" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Advanced Elements</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/forms/editors.html" class="nav-link">
+              <a href="#/Editors" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Editors</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/forms/validation.html" class="nav-link">
+              <a href="#/Validation" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Validation</p>
               </a>
             </li>
           </ul>
         </li>
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!TableToggle ? "nav-link active" : "nav-link"} on:click={handleTableToggle}>
             <i class="nav-icon fas fa-table" />
             <p>
               Tables
@@ -273,28 +320,29 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/tables/simple.html" class="nav-link">
+              <a href="#/SimpleTable" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Simple Tables</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/tables/data.html" class="nav-link">
+              <a href="#/Data" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>DataTables</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/tables/jsgrid.html" class="nav-link">
+              <a href="#/JsGrid" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>jsGrid</p>
               </a>
             </li>
           </ul>
         </li>
+
         <li class="nav-header">EXAMPLES</li>
         <li class="nav-item">
-          <a href="pages/calendar.html" class="nav-link">
+          <a href="#/Calender" class="nav-link">
             <i class="nav-icon far fa-calendar-alt" />
             <p>
               Calendar
@@ -302,20 +350,23 @@
             </p>
           </a>
         </li>
+
         <li class="nav-item">
-          <a href="pages/gallery.html" class="nav-link">
+          <a href="#/Gallary" class="nav-link">
             <i class="nav-icon far fa-image" />
             <p>Gallery</p>
           </a>
         </li>
+
         <li class="nav-item">
-          <a href="pages/kanban.html" class="nav-link">
+          <a href="#/Kanban" class="nav-link">
             <i class="nav-icon fas fa-columns" />
             <p>Kanban Board</p>
           </a>
         </li>
+
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!MailBoxToggle ? "nav-link active" : "nav-link"} on:click={handleMailBoxToggle}>
             <i class="nav-icon far fa-envelope" />
             <p>
               Mailbox
@@ -324,19 +375,19 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/mailbox/mailbox.html" class="nav-link">
+              <a href="#/MailBox" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Inbox</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/mailbox/compose.html" class="nav-link">
+              <a href="#/Compose" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Compose</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/mailbox/read-mail.html" class="nav-link">
+              <a href="#/ReadMail" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Read</p>
               </a>
@@ -344,7 +395,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!ExampleToggle ? "nav-link active" : "nav-link"} on:click={handleExampleToggle}>
             <i class="nav-icon fas fa-book" />
             <p>
               Pages
@@ -353,61 +404,61 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="pages/examples/invoice.html" class="nav-link">
+              <a href="#/Invoice" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Invoice</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/profile.html" class="nav-link">
+              <a href="#/Profile" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Profile</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/e-commerce.html" class="nav-link">
+              <a href="#/ECommerce" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>E-commerce</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/projects.html" class="nav-link">
+              <a href="#/Projects" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Projects</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project-add.html" class="nav-link">
+              <a href="#/ProjectAdd" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Project Add</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project-edit.html" class="nav-link">
+              <a href="#/ProjectEdit" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Project Edit</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/project-detail.html" class="nav-link">
+              <a href="#/ProjectDetail" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Project Detail</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/contacts.html" class="nav-link">
+              <a href="#/Contacts" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Contacts</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/faq.html" class="nav-link">
+              <a href="#/Faq" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>FAQ</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/contact-us.html" class="nav-link">
+              <a href="#/ContactUs" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Contact us</p>
               </a>
@@ -415,7 +466,7 @@
           </ul>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" class={!ExtraToggle ? "nav-link active" : "nav-link"} on:click={handleExtraToggle}>
             <i class="nav-icon far fa-plus-square" />
             <p>
               Extras
@@ -424,7 +475,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="#" class="nav-link">
+              <a href="#" class={!SearchToggle ? "nav-link active" : "nav-link"} on:click={handleSearchToggle}>
                 <i class="far fa-circle nav-icon" />
                 <p>
                   Login & Register v1
@@ -433,25 +484,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/examples/login.html" class="nav-link">
+                  <a href="#/Login" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Login v1</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/register.html" class="nav-link">
+                  <a href="#/Register" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Register v1</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/forgot-password.html" class="nav-link">
+                  <a href="#/ForgotPassword" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Forgot Password v1</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/recover-password.html" class="nav-link">
+                  <a href="#/RecoverPassword" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Recover Password v1</p>
                   </a>
@@ -468,25 +519,25 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="pages/examples/login-v2.html" class="nav-link">
+                  <a href="#/Login_v2" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Login v2</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/register-v2.html" class="nav-link">
+                  <a href="#/Register_v2" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Register v2</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/forgot-password-v2.html" class="nav-link">
+                  <a href="#/ForgotPassword_v2" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Forgot Password v2</p>
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a href="pages/examples/recover-password-v2.html" class="nav-link">
+                  <a href="#/RecoverPassword_v2" class="nav-link">
                     <i class="far fa-circle nav-icon" />
                     <p>Recover Password v2</p>
                   </a>
@@ -494,49 +545,49 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/lockscreen.html" class="nav-link">
+              <a href="#/LockScreen" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Lockscreen</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+              <a href="#/LegacyUserMenu" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Legacy User Menu</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/language-menu.html" class="nav-link">
+              <a href="#/LanguageMenu" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Language Menu</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/404.html" class="nav-link">
+              <a href="#/Notfound" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Error 404</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/500.html" class="nav-link">
+              <a href="#/ServerError" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Error 500</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/pace.html" class="nav-link">
+              <a href="#/Pace" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Pace</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="pages/examples/blank.html" class="nav-link">
+              <a href="#/Blank" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Blank Page</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="starter.html" class="nav-link">
+              <a href="#/Starter" class="nav-link">
                 <i class="far fa-circle nav-icon" />
                 <p>Starter Page</p>
               </a>

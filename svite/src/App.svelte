@@ -21,8 +21,8 @@
 // 	<script src="dist/js/demo.js"></script>
 // 	<script src="dist/js/pages/dashboard.js"></script>
 
-DONE // 	<script src="dist/js/adminlte.js"></script>
-DONE //   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+DONE // <script src="dist/js/adminlte.js"></script>
+DONE // <link rel="stylesheet" href="dist/css/adminlte.min.css">
 -->
 <script>
   import Router from "svelte-spa-router";
@@ -40,7 +40,7 @@ DONE //   <link rel="stylesheet" href="dist/css/adminlte.min.css">
 <div class="wrapper">
   <!-- Preloader -->
   <div class="preloader flex-column justify-content-center align-items-center">
-    <img class="animation__shake" src="/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60" />
+    <img class="animation__shake" src="/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60" />
   </div>
 
   <Navbar />
