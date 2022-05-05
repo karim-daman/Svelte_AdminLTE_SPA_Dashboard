@@ -1,5 +1,5 @@
 <script>
-  import { revenue } from "$lib/revenue.js";
+  import { revenue, areaChart, stackedBarChart, barChart, pieChart, donutChart, lineChart } from "$lib/revenue.js";
 </script>
 
 <div class="content-header">
@@ -101,29 +101,44 @@
             <div class="card-tools">
               <ul class="nav nav-pills ml-auto">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#revenue-chart" data-toggle="tab">Area</a>
+                  <a class="nav-link active" href="#revenuechart" data-toggle="tab">Revenue</a>
                 </li>
+
                 <li class="nav-item">
-                  <a class="nav-link" href="#sales-chart" data-toggle="tab">Donut</a>
+                  <a class="nav-link" href="#barChart" data-toggle="tab">barChart</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#donutChart" data-toggle="tab">donutChart</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="#pieChart" data-toggle="tab">pieChart</a>
                 </li>
               </ul>
             </div>
           </div>
-          <!-- /.card-header -->
+
           <div class="card-body">
             <div class="tab-content p-0">
-              <!-- Morris chart - Sales -->
               <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;">
-                <canvas use:revenue id="revenue-chart-canvas" height="300" style="height: 300px;" />
+                <canvas use:revenue id="revenue-chart-canvas" style="height: 300px;" />
               </div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                <canvas id="sales-chart-canvas" height="300" style="height: 300px;" />
+
+              <div class="chart tab-pane" id="barChart" style="position: relative; height: 300px;">
+                <canvas use:barChart id="barChart" style="height: 300px;" />
+              </div>
+
+              <div class="chart tab-pane" id="donutChart" style="position: relative; height: 300px;">
+                <canvas use:donutChart id="donutChart" style="height: 300px;" />
+              </div>
+
+              <div class="chart tab-pane" id="pieChart" style="position: relative; height: 300px;">
+                <canvas use:pieChart id="pieChart" style="height: 300px;" />
               </div>
             </div>
           </div>
-          <!-- /.card-body -->
         </div>
-        <!-- /.card -->
 
         <!-- DIRECT CHAT -->
         <div class="card direct-chat direct-chat-primary">
