@@ -31,6 +31,8 @@ DONE // <link rel="stylesheet" href="dist/css/adminlte.min.css">
   import "admin-lte/dist/js/adminlte.min.js";
   import "admin-lte/dist/css/adminlte.min.css";
   import "@fortawesome/fontawesome-free/css/all.min.css";
+  import "overlayScrollbars/css/OverlayScrollbars.min.css";
+  import "overlayScrollbars/js/jquery.overlayScrollbars.min.js";
 
   import Navbar from "$lib/components/Navbar.svelte";
   import Sidebar from "$lib/components/Sidebar.svelte";

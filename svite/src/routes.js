@@ -64,7 +64,7 @@ import SimpleTable from "$lib/pages/tables/simple.svelte";
 //------------------------------------------------------------------------------tables
 
 //------------------------------------------------------------------------------Charts
-import Charts from "$lib/pages/charts/chartjs.svelte";
+import Charts from "$lib/pages/charts/Chartjs.svelte";
 import Flot from "$lib/pages/charts/Flot.svelte";
 import Inline from "$lib/pages/charts/Inline.svelte";
 import Uplot from "$lib/pages/charts/Uplot.svelte";
